@@ -17,7 +17,10 @@ export default class App extends Component {
         // const { advice } = response.data.slip;
 
         // this.setState({ advice });
+        const {advice} = response.data.slip
         console.log(response.data.slip.advice)
+
+        this.setState({advice})
       })
       .catch((error) => {
         console.log(error);
@@ -25,6 +28,16 @@ export default class App extends Component {
   }
 
   render() {
-    return <div className="App">App</div>;
+
+    
+    return <div className="app">
+    <div className="card">
+    <h1 className="heading">{this.state.advice}</h1>
+    <button className="button" onClick={this.fetchAdvice}>
+    <span>Generate a Quote</span>
+    </button>
+    </div>
+    
+    </div>;
   }
 }
