@@ -15,8 +15,9 @@ export default class App extends Component {
     axios
       .get("https://api.adviceslip.com/advice")
       .then((response) => {
+   
         const { advice } = response.data.slip;
-        console.log(response.data.slip.advice)
+        // console.log(response.data.slip.advice)
 
         this.setState({ advice });
       })
